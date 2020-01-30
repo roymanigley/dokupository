@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane prefHeight="474.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.bytecrowd.dokupository.gui.controllers.crud.edit.EditDocumentationViewController">
+    <children>
+        <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <GridPane styleClass="theme-header" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="%label.documentation">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                        </Label>
+                        <JFXHamburger fx:id="btnHamburger" alignment="CENTER_LEFT" GridPane.columnIndex="1">
+                        </JFXHamburger>
+                    </children>
+                </GridPane>
+            </top>
+            <center>
+                <ScrollPane fitToWidth="true" styleClass="theme-center">
+                    <GridPane prefHeight="236.0" prefWidth="448.0" BorderPane.alignment="CENTER">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints maxHeight="30.0" minHeight="60.0" prefHeight="60.0" vgrow="NEVER" />
+                            <RowConstraints maxHeight="30.0" minHeight="60.0" prefHeight="60.0" vgrow="NEVER" />
+                            <RowConstraints maxHeight="30.0" minHeight="60.0" prefHeight="60.0" vgrow="NEVER" />
+                            <RowConstraints minHeight="200.0" vgrow="ALWAYS" />
+                            <RowConstraints minHeight="200.0" vgrow="ALWAYS" />
+                            <RowConstraints maxHeight="30.0" minHeight="60.0" prefHeight="60.0" vgrow="NEVER" />
+                            <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="NEVER" />
+                            <RowConstraints />
+                        </rowConstraints>
+                        <children>
+
+                            <JFXComboBox fx:id="input_version_begin" labelFloat="true" onKeyPressed="#handleComboBoxKeyPress" prefHeight="26.0" prefWidth="2944.0" promptText="%label.documentation.node.version.begin" GridPane.rowIndex="0" />
+
+                            <JFXComboBox fx:id="input_version_end" labelFloat="true" onKeyPressed="#handleComboBoxKeyPress" prefHeight="26.0" prefWidth="2859.0" promptText="%label.documentation.node.version.end" GridPane.rowIndex="1" />
+
+                            <JFXComboBox fx:id="input_style" labelFloat="true" onKeyPressed="#handleComboBoxKeyPress" prefHeight="26.0" prefWidth="3042.0" promptText="%label.documentation.node.style" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+
+                            <JFXTextArea fx:id="input_text_de" labelFloat="true" minHeight="200.0" promptText="%label.documentation.node.text.de" GridPane.rowIndex="3">
+                        <padding>
+                           <Insets top="20.0" />
+                        </padding></JFXTextArea>
+
+                            <JFXTextArea fx:id="input_text_fr" labelFloat="true" minHeight="200.0" promptText="%label.documentation.node.text.fr" GridPane.rowIndex="4">
+                        <GridPane.margin>
+                           <Insets />
+                        </GridPane.margin>
+                        <padding>
+                           <Insets top="20.0" />
+                        </padding></JFXTextArea>
+
+                            <JFXTextField fx:id="input_sort" labelFloat="true" promptText="%label.sortierung" GridPane.rowIndex="5">
+                        <GridPane.margin>
+                           <Insets />
+                        </GridPane.margin>
+                        <padding>
+                           <Insets top="20.0" />
+                        </padding></JFXTextField>
+
+                            <JFXButton fx:id="btnImages" prefHeight="26.0" prefWidth="2113.0" styleClass="button-theme" text="%label.button.images" GridPane.rowIndex="6">
+                        <padding>
+                           <Insets top="20.0" />
+                        </padding></JFXButton>
+                        </children>
+                    </GridPane>
+                </ScrollPane>
+            </center>
+            <bottom>
+
+                <GridPane styleClass="theme-footer" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+                        <ColumnConstraints halignment="LEFT" hgrow="NEVER" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints valignment="TOP" />
+                    </rowConstraints>
+                    <children>
+                  <HBox alignment="CENTER" prefHeight="26.0" prefWidth="28.0" spacing="50.0" GridPane.hgrow="NEVER">
+                     <children>
+      
+                              <JFXButton fx:id="btnSave" styleClass="button-save">
+                                  <tooltip>
+                                      <Tooltip text="%label.save" />
+                                  </tooltip>
+                              </JFXButton>
+      
+      
+                              <JFXButton fx:id="btnSaveAndClear" styleClass="button-add">
+                                  <tooltip>
+                                      <Tooltip text="%label.save.and.clear" />
+                                  </tooltip>
+                              </JFXButton>
+                     </children>
+                  </HBox>
+
+                        <JFXButton fx:id="btnCancel" styleClass="button-cancel" GridPane.columnIndex="2">
+                            <tooltip>
+                                <Tooltip text="%label.cancel" />
+                            </tooltip>
+                        </JFXButton>
+                    </children>
+                </GridPane>
+            </bottom>
+            <right>
+                <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefWidth="350.0" BorderPane.alignment="CENTER">
+                    <content>
+                        <VBox>
+                            <children>
+                                <Label text="%label.commits">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="15.0" top="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <JFXToggleButton fx:id="commitTypeToggler" selected="true" text="%label.commits.related" />
+                                <JFXListView fx:id="commitsList" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS" />
+                            </children>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+            </right>
+        </BorderPane>
+        <JFXDrawer fx:id="menuDrawer" defaultDrawerSize="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
+
+        <JFXDrawer fx:id="loadingDrawer" direction="TOP" defaultDrawerSize="Infinity" AnchorPane.bottomAnchor="0.0"
+                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fitHeight="225.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../img/loading.gif"/>
+                    </image>
+                </ImageView>
+            </children>
+        </JFXDrawer>
+    </children>
+</AnchorPane>

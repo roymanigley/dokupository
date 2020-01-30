@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ch.bytecrowd.dokupository.gui.controllers.crud.edit.EditApplicationVersionViewController">
+    <children>
+        <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                    AnchorPane.topAnchor="0.0">
+            <top>
+                <GridPane styleClass="theme-header" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label text="%label.version">
+                            <font>
+                                <Font size="22.0"/>
+                            </font>
+                        </Label>
+                        <JFXHamburger fx:id="btnHamburger" alignment="CENTER_LEFT" GridPane.columnIndex="1">
+                        </JFXHamburger>
+                    </children>
+                </GridPane>
+            </top>
+            <center>
+                <ScrollPane fitToWidth="true" styleClass="theme-center">
+                    <GridPane BorderPane.alignment="CENTER">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            <ColumnConstraints/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints maxHeight="30.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                            <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                            <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                            <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                            <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                            <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                            <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                            <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="NEVER"/>
+                            <RowConstraints/>
+                        </rowConstraints>
+                        <children>
+                            <JFXTextField fx:id="input_version" labelFloat="true" promptText="%label.version"
+                                          GridPane.rowIndex="0"/>
+                            <JFXComboBox fx:id="input_application" labelFloat="true" prefHeight="26.0" onKeyPressed="#handleComboBoxKeyPress"
+                                         prefWidth="3040.0" promptText="%label.application" GridPane.rowIndex="1">
+                                <GridPane.margin>
+                                    <Insets/>
+                                </GridPane.margin>
+                            </JFXComboBox>
+
+
+                            <JFXComboBox fx:id="input_state" labelFloat="true" prefHeight="26.0" prefWidth="2302.0" onKeyPressed="#handleComboBoxKeyPress"
+                                         promptText="%label.version.state" GridPane.rowIndex="2">
+                                <GridPane.margin>
+                                    <Insets/>
+                                </GridPane.margin>
+                            </JFXComboBox>
+
+                            <JFXComboBox fx:id="input_user_responsible" labelFloat="true" prefHeight="26.0" onKeyPressed="#handleComboBoxKeyPress"
+                                         prefWidth="2302.0" promptText="%label.version.responsible"
+                                         GridPane.rowIndex="3">
+                                <GridPane.margin>
+                                    <Insets/>
+                                </GridPane.margin>
+                            </JFXComboBox>
+
+                            <JFXComboBox fx:id="input_user_tester" labelFloat="true" prefHeight="26.0" onKeyPressed="#handleComboBoxKeyPress"
+                                         prefWidth="2302.0" promptText="%label.version.tester" GridPane.rowIndex="4">
+                                <GridPane.margin>
+                                    <Insets/>
+                                </GridPane.margin>
+                            </JFXComboBox>
+
+                            <JFXTextField fx:id="input_remarkDe" labelFloat="true" promptText="%label.version.remark.de"
+                                          GridPane.rowIndex="5"/>
+
+                            <JFXTextField fx:id="input_remarkFr" labelFloat="true" promptText="%label.version.remark.fr"
+                                          GridPane.rowIndex="6"/>
+
+                            <DatePicker fx:id="input_release_date" prefHeight="29.0" prefWidth="2673.0" GridPane.rowIndex="7" promptText="%label.version.releasedate" />
+
+                            <JFXTextField fx:id="input_sort" labelFloat="true" promptText="%label.sortierung"
+                                          GridPane.rowIndex="8"/>
+                        </children>
+                    </GridPane>
+                </ScrollPane>
+            </center>
+            <bottom>
+
+                <GridPane styleClass="theme-footer" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints valignment="TOP"/>
+                    </rowConstraints>
+                    <children>
+
+                        <JFXButton fx:id="btnSave" styleClass="button-save" GridPane.columnIndex="0">
+                            <tooltip>
+                                <Tooltip text="%label.save"/>
+                            </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="btnCancel" styleClass="button-cancel" GridPane.columnIndex="1">
+                            <tooltip>
+                                <Tooltip text="%label.cancel"/>
+                            </tooltip>
+                        </JFXButton>
+                    </children>
+                </GridPane>
+            </bottom>
+        </BorderPane>
+
+        <JFXDrawer fx:id="menuDrawer" defaultDrawerSize="400.0" AnchorPane.bottomAnchor="0.0"
+                   AnchorPane.topAnchor="0.0"/>
+
+        <JFXDrawer fx:id="loadingDrawer" direction="TOP" defaultDrawerSize="Infinity" AnchorPane.bottomAnchor="0.0"
+                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fitHeight="225.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../img/loading.gif"/>
+                    </image>
+                </ImageView>
+            </children>
+        </JFXDrawer>
+    </children>
+</AnchorPane>

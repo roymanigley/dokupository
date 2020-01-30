@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <APPLICATION ID_APPLICATION="1001" NAME_DE="dummy-website" NAME_FR="dummy-website" REPO_URL="http://localhost:3000/api/v1/repos/roy/dummy-repo" BRANCH="master" TOKEN="c7dd2741406149f7bbdeed36fc9717ba314178f6" REPO_TYPE="0"/>
+    <APPLICATION_APPLICATION_VERSIONS/>
+    <APPLICATION_VERSION/>
+    <COMMIT/>
+    <DOCUMENTATION_NODE/>
+    <DOCUMENTATION_NODE_COMMIT/>
+    <PRINT_SCREEN/>
+    <USER/>
+    <WORD_TEMPLATE/>
+</dataset>

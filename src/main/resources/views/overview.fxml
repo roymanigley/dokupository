@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<AnchorPane prefHeight="350.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.bytecrowd.dokupository.gui.controllers.OverViewController">
+    <children>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+        <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <GridPane styleClass="theme-header" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <JFXHamburger fx:id="btnHamburger" alignment="CENTER_LEFT" GridPane.columnIndex="1">
+                        </JFXHamburger>
+                    </children>
+                </GridPane>
+            </top>
+            <bottom>
+                <HBox spacing="10" styleClass="theme-footer" BorderPane.alignment="CENTER">
+                    <children>
+
+                    </children>
+                </HBox>
+            </bottom>
+            <center>
+            </center>
+         <center>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+
+                   <Label text="%label.app.name" textFill="#16a085">
+                       <font>
+                           <Font size="36.0" />
+                       </font>
+                   </Label>
+
+                  <ImageView fx:id="image" fitHeight="200.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#handleClick">
+                      <image>
+                          <Image url="@../img/logo.png" />
+                      </image>
+                      <VBox.margin>
+                          <Insets bottom="50.0" />
+                      </VBox.margin>
+                  </ImageView>
+               </children>
+            </VBox>
+         </center>
+        </BorderPane>
+        <JFXDrawer fx:id="menuDrawer" defaultDrawerSize="400.0" AnchorPane.bottomAnchor="0.0"
+                   AnchorPane.topAnchor="0.0"/>
+        <JFXDrawer fx:id="loadingDrawer" direction="TOP" defaultDrawerSize="Infinity" AnchorPane.bottomAnchor="0.0"
+                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fitHeight="225.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/loading.gif"/>
+                    </image>
+                </ImageView>
+            </children>
+        </JFXDrawer>
+    </children>
+</AnchorPane>

@@ -1,0 +1,13 @@
+version: '2'
+services:
+  mariadb:
+    image: 'bitnami/mariadb:10.2'
+    environment:
+      - MARIADB_ROOT_PASSWORD=toor
+      - MARIADB_USER=user
+      - MARIADB_PASSWORD=password
+      - MARIADB_DATABASE=dokupository
+    ports:
+      - '3303:3306'
+    volumes:
+      - data:/bitnami/mariadb
